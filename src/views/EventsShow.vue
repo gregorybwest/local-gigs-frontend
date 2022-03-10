@@ -18,9 +18,16 @@ export default {
 </script>
 
 <template>
-  <div class="home">
-    <h1>{{ message }}</h1>
+  <div class="events-show">
+    <h1>{{ event.user.user_name }} @ {{ event.yelp_venue.name }}</h1>
+    <h2>{{ event.yelp_venue.location[0] }}, {{ event.yelp_venue.location[1] }}</h2>
+    <img v-bind:src="this.event.flier_image_url" alt="" />
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  width: 400px;
+  height: auto;
+}
+</style>
