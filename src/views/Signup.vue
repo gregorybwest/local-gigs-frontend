@@ -14,6 +14,7 @@ export default {
         .post("/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
+          localStorage.setItem("flashMessage", "Sucessfully signed up!");
           this.$router.push("/login");
         })
         .catch((error) => {
@@ -33,11 +34,15 @@ export default {
       </ul>
       <div>
         <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+        <input type="text" v-model="newUserParams.user_name" />
       </div>
       <div>
         <label>Email:</label>
         <input type="email" v-model="newUserParams.email" />
+      </div>
+      <div>
+        <label>City:</label>
+        <input type="text" v-model="newUserParams.location" />
       </div>
       <div>
         <label>Password:</label>
