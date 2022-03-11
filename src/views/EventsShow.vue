@@ -5,6 +5,8 @@ export default {
   data: function () {
     return {
       event: {},
+      errors: [],
+      sadStatus: "",
     };
   },
   created: function () {
@@ -19,8 +21,11 @@ export default {
 
 <template>
   <div class="events-show">
-    <h1>{{ event.user.user_name }} @ {{ event.yelp_venue.name }}</h1>
-    <h2>{{ event.yelp_venue.location[0] }}, {{ event.yelp_venue.location[1] }}</h2>
+    <router-link v-bind:to="`/users/${event.user.id}`">
+      <h1>{{ this.event.user.user_name }}</h1>
+    </router-link>
+    <h1>@ {{ this.event.yelp_venue.name }}</h1>
+    <h2>{{ this.event.yelp_venue.location[0] }}, {{ this.event.yelp_venue.location[1] }}</h2>
     <img v-bind:src="this.event.flier_image_url" alt="" />
   </div>
 </template>
