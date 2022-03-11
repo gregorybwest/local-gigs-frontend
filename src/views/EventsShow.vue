@@ -5,8 +5,6 @@ export default {
   data: function () {
     return {
       event: {},
-      errors: [],
-      sadStatus: "",
     };
   },
   created: function () {
