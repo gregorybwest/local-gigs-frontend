@@ -28,7 +28,9 @@ export default {
 <template>
   <div class="signup">
     <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
+      <h1>Welcome to Local Gigs!</h1>
+      <br />
+      <h2>Signup to Post Your Events!</h2>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -43,6 +45,17 @@ export default {
       <div>
         <label>City:</label>
         <input type="text" v-model="newUserParams.location" />
+      </div>
+      <div>
+        <p>Are you an artist?</p>
+        <form action="is_artist?">
+          <input type="radio" v-model="newUserParams.is_artist" id="yes" name="is_artist?" value="true" />
+          <label for="yes">Yes</label>
+          <br />
+          <input type="radio" v-model="newUserParams.is_artist" id="no" name="is_artist?" value="false" />
+          <label for="no">No</label>
+          <br />
+        </form>
       </div>
       <div>
         <label>Password:</label>
