@@ -5,6 +5,7 @@ import Logout from "../views/Logout.vue";
 import EventsIndex from "../views/EventsIndex.vue";
 import EventsShow from "../views/EventsShow.vue";
 import UsersShow from "../views/UsersShow.vue";
+import EventsNew from "../views/EventsNew.vue";
 
 const routes = [
   { path: "/signup", name: "signup", component: Signup },
@@ -13,6 +14,7 @@ const routes = [
   { path: "/events", name: "EventsIndex", component: EventsIndex },
   { path: "/events/:id", name: "EventsShow", component: EventsShow },
   { path: "/users/:id", name: "UsersShow", component: UsersShow },
+  { path: "/events/new", name: "EventsNew", component: EventsNew },
 ];
 
 const router = createRouter({
