@@ -26,6 +26,8 @@ export default {
     |
     <router-link to="/events">All Events</router-link>
     |
+    <router-link v-if="isLoggedIn" to="/events/new">New Event</router-link>
+    |
   </div>
 
   <div v-if="flashMessage">
