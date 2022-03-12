@@ -5,7 +5,8 @@ export default {
   data: function () {
     return {
       newEventParams: {},
-      userVenue: "",
+      displayUserVenue: "",
+      yelp_venue_id: "",
       errors: [],
       sadStatus: "",
     };
@@ -25,10 +26,14 @@ export default {
         });
     },
     searchVenue: function () {
-      axios.get(`/venues?location=losangeles&categories=musicvenues,bars&term=${this.userVenue}`).then((response) => {
-        console.log("Venue Data:", response);
-        this.userVenue = response.data;
-      });
+      axios
+        .get(`/venues?location=losangeles&categories=musicvenues,bars&term=${this.displayUserVenue.replace(/ /g, "")}`) //removes all whitespace from user inputted string
+        .then((response) => {
+          console.log("Venue Data:", response.data[0]);
+          // this.yelp_venue_id = response.data[0].id;
+          this.newEventParams.yelp_venue_id = response.data[0].id;
+          this.displayUserVenue = `${response.data[0].name}, ${response.data[0].location.display_address}`;
+        });
     },
   },
 };
@@ -37,8 +42,18 @@ export default {
 <template>
   <div class="events-new">
     <h1>Create New Event</h1>
+    <form v-on:submit.prevent="searchVenue()">
+      <h2>Search for your venue</h2>
+      <div>
+        Venue Search:
+        <input v-model="this.displayUserVenue" type="text" />
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    {{ this.displayUserVenue }}
+    <br />
+    <br />
     <form v-on:submit.prevent="createEvent()">
-      {{ newEventParams.yelp_venue_id }}
       <div>
         Yelp Venue Id:
         <input v-model="newEventParams.yelp_venue_id" type="text" />
