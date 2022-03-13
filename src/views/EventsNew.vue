@@ -57,12 +57,12 @@ export default {
     <br />
     <br />
     <form v-on:submit.prevent="createEvent()">
-      <div>
+      <!-- <div>
         Yelp Venue Id:
         <input v-model="newEventParams.yelp_venue_id" type="text" />
-      </div>
+      </div> -->
       <div>
-        Show time:
+        Show time: (required)
         <input v-model="newEventParams.show_time" type="text" />
       </div>
       <div>
