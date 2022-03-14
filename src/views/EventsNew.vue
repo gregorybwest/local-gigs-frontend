@@ -7,6 +7,7 @@ export default {
       newEventParams: {},
       userVenue: "",
       noResultsMessage: "",
+      displaySelectedVenue: "",
       venues: [],
       errors: [],
       sadStatus: "",
@@ -42,6 +43,7 @@ export default {
     chooseVenue: function (venue) {
       this.newEventParams.yelp_venue_id = venue.id;
       console.log("You chose:", venue.name);
+      this.displaySelectedVenue = venue.name;
     },
   },
 };
@@ -62,6 +64,8 @@ export default {
         {{ venue.name }}, {{ venue.location.display_address[0] }}
         <button v-on:click="chooseVenue(venue)">Choose Venue</button>
       </p>
+      <br />
+      <p>You selected: {{ displaySelectedVenue }}</p>
       <div v-if="noResultsMessage">
         {{ noResultsMessage }}
         <button v-on:click="noResultsMessage = ''">Okay</button>
