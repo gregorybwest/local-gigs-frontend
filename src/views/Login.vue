@@ -15,6 +15,7 @@ export default {
         .then((response) => {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
+          localStorage.setItem("user_id", response.data.user_id); // for edit users show page
           localStorage.setItem("flashMessage", "Sucessfully logged in!");
           this.$router.push("/");
         })
