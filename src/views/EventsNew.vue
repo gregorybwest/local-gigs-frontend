@@ -6,10 +6,9 @@ export default {
     return {
       newEventParams: {},
       userVenue: "",
-      allVenues: [],
-      venueList: "",
+      noResultsMessage: "",
+      venues: [],
       displayAllVenues: [],
-      displayTopVenue: "",
       errors: [],
       sadStatus: "",
     };
@@ -21,7 +20,7 @@ export default {
         .post("/events", this.newEventParams)
         .then((response) => {
           console.log("New Event:", response.data);
-          localStorage.setItem("flashMessage", "Recipe successfully created!");
+          localStorage.setItem("flashMessage", "Event successfully created!");
         })
         .catch((error) => {
           this.sadStatus = error.response.status;
@@ -33,19 +32,17 @@ export default {
         .get(`/venues?location=losangeles&categories=musicvenues,bars&term=${this.userVenue.replace(/ /g, "")}`) //removes all whitespace from user inputted string
         .then((response) => {
           console.log("Venue Data:", response.data);
-          this.newEventParams.yelp_venue_id = response.data[0].id; // hard codes top result as venue
-          this.allVenues = response.data.forEach((venue) => {
-            console.log(venue.name); // console logs names of all venues found by yelp API
-          });
-          function listVenues(venueObject) {
-            return `${venueObject.name}, ${venueObject.location.display_address}`; // function for .map
+          if (response.data.length === 0) {
+            console.log("no search results");
+            this.noResultsMessage = "No results found, check your spelling and try again!";
+            return;
           }
-          this.displayAllVenues = response.data.map(listVenues).slice(0, 5); //returns top 5 venue results from yelp
-          // for (let i = 0; i < this.displayAllVenues.length; i++) {
-          //   this.venueList = document.write(this.displayAllVenues[i] + "<br >");
-          // } // this takes user to a separate page with a list of the venues, which we don't want
-          this.displayTopVenue = `${response.data[0].name}, ${response.data[0].location.display_address}`;
+          this.venues = response.data.slice(0, 5);
         });
+    },
+    chooseVenue: function (venue) {
+      this.newEventParams.yelp_venue_id = venue.id;
+      console.log("You chose:", venue.name);
     },
   },
 };
@@ -62,8 +59,14 @@ export default {
       </div>
       <button type="submit">Search</button>
       <br />
-      {{ this.displayAllVenues }}
-      {{ this.displayTopVenue }}
+      <p v-for="venue in venues" v-bind:key="venue.id">
+        {{ venue.name }}, {{ venue.location.display_address[0] }}
+        <button v-on:click="chooseVenue(venue)">Choose Venue</button>
+      </p>
+      <div v-if="noResultsMessage">
+        {{ noResultsMessage }}
+        <button v-on:click="noResultsMessage = ''">Okay</button>
+      </div>
     </form>
 
     <br />
