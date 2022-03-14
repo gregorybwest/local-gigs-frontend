@@ -4,6 +4,7 @@ export default {
     return {
       isLoggedIn: !!localStorage.jwt,
       flashMessage: null,
+      current_user_id: "", // this is so we can call current_user_id in the watch function below
     };
   },
   watch: {
@@ -11,6 +12,7 @@ export default {
       this.isLoggedIn = !!localStorage.jwt;
       this.flashMessage = localStorage.flashMessage;
       localStorage.removeItem("flashMessage");
+      this.current_user_id = localStorage.getItem("user_id"); // so we can use `/users/${current_user_id}` in router-link to route to UsersShow page of user who is currently logged in
     },
   },
 };
@@ -28,6 +30,7 @@ export default {
     |
     <router-link v-if="isLoggedIn" to="/events/new">New Event</router-link>
     |
+    <router-link v-if="isLoggedIn" v-bind:to="`/users/${current_user_id}`">Profile</router-link>
   </div>
 
   <div v-if="flashMessage">
