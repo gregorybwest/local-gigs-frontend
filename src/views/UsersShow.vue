@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       user: {},
+      current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -32,6 +33,14 @@ export default {
       <p>{{ user.bio }}</p>
       <h2>Listen!</h2>
       <a v-bind:href="user.spotify_link">Listen to us on Spotify!</a>
+    </div>
+    <div v-if="current_user_id == user.id">
+      <!-- fix the line above ^^^ so that only current user can edit page -->
+      <button>
+        <router-link v-bind:to="`/users/${user.id}/edit`">Edit</router-link>
+      </button>
+      <br />
+      <button v-on:click="destroyUser()">Delete Account</button>
     </div>
   </div>
 </template>
