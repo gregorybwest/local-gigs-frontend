@@ -8,7 +8,6 @@ export default {
       userVenue: "",
       noResultsMessage: "",
       venues: [],
-      displayAllVenues: [],
       errors: [],
       sadStatus: "",
     };
