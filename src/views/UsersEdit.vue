@@ -5,7 +5,7 @@ export default {
   data: function () {
     return {
       user: {},
-      editUserParams: {},
+      editUserParams: {}, // do we need this?
       errors: [],
     };
   },
@@ -39,20 +39,27 @@ export default {
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <!-- remove line below after testing is done  -->
-      <p>Current user: {{ user }}</p>
+      <!-- <p>Current user: {{ user }}</p> -->
       <p><img v-bind:src="user.image_url" alt="" /></p>
       <div>
-        <label>User name:</label>
+        <label>Edit Image:</label>
+        <input type="text" v-model="user.image_url" />
+      </div>
+      <div>
+        <label>Edit User name:</label>
         <input type="text" v-model="user.user_name" />
       </div>
       <div>
-        <label>Location:</label>
+        <label>Edit Location:</label>
         <input type="text" v-model="user.location" />
       </div>
       <div>
-        <label>Bio:</label>
+        <label>Edit Bio:</label>
         <input type="text" v-model="user.bio" />
+      </div>
+      <div>
+        <label>Edit Spotify Url:</label>
+        <input type="text" v-model="user.spotify_link" />
       </div>
       <input type="submit" value="Update" />
     </form>
