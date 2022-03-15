@@ -65,7 +65,9 @@ export default {
         <button v-on:click="chooseVenue(venue)">Choose Venue</button>
       </p>
       <br />
-      <p>You selected: {{ displaySelectedVenue }}</p>
+      <div v-if="displaySelectedVenue">
+        <p>You selected: {{ displaySelectedVenue }}</p>
+      </div>
       <div v-if="noResultsMessage">
         {{ noResultsMessage }}
         <button v-on:click="noResultsMessage = ''">Okay</button>
