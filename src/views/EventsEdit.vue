@@ -39,8 +39,7 @@ export default {
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <!-- remove line below after testing is done  -->
-      <p>Current event: {{ event }}</p>
+      <!-- <p>Current event: {{ event }}</p> -->
       <p><img v-bind:src="event.flier_image_url" alt="" /></p>
       <div>
         <label>Show Time</label>
