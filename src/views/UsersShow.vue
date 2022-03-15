@@ -14,7 +14,19 @@ export default {
       this.user = response.data;
     });
   },
-  methods: {},
+  methods: {
+    destroyUser: function () {
+      if (confirm("Are you sure you want to delete this?")) {
+        axios.delete(`users/${this.user.id}`).then((response) => {
+          console.log("User deleted", response.data);
+          localStorage.removeItem("jwt");
+          localStorage.removeItem("user_id");
+          localStorage.setItem("flashMessage", "User successfully deleted");
+          this.$router.push("/");
+        });
+      }
+    },
+  },
 };
 </script>
 
@@ -34,10 +46,11 @@ export default {
       <h2>Listen!</h2>
       <a v-bind:href="user.spotify_link">Listen to us on Spotify!</a>
     </div>
+    <br />
     <div v-if="current_user_id == user.id">
       <!-- fix the line above ^^^ so that only current user can edit page -->
       <button>
-        <router-link v-bind:to="`/users/${user.id}/edit`">Edit</router-link>
+        <router-link v-bind:to="`/users/${user.id}/edit`">Edit Profile</router-link>
       </button>
       <br />
       <button v-on:click="destroyUser()">Delete Account</button>
