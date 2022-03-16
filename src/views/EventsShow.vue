@@ -1,6 +1,5 @@
 <script>
 import axios from "axios";
-import Moment from "moment";
 
 export default {
   data: function () {
@@ -12,7 +11,6 @@ export default {
     axios.get(`/events/${this.$route.params.id}`).then((response) => {
       console.log("test", response.data);
       this.event = response.data;
-      this.event.show_time = Moment(this.event.show_time).format("MMMM DD, LT");
     });
   },
   methods: {
@@ -36,7 +34,7 @@ export default {
     </router-link>
     <h1>@ {{ this.event.yelp_venue.name }}</h1>
     <h2>{{ this.event.yelp_venue.location[0] }}, {{ this.event.yelp_venue.location[1] }}</h2>
-    <h3>Show Time: {{ event.show_time }}</h3>
+    <h3>Show Time: {{ event.readable_date }}</h3>
     <img v-bind:src="this.event.flier_image_url" alt="" />
     <div v-if="event.owner">
       <button><router-link v-bind:to="`/events/${event.id}/edit`">Edit Event</router-link></button>
