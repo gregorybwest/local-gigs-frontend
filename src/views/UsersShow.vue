@@ -48,7 +48,6 @@ export default {
     </div>
     <br />
     <div v-if="current_user_id == user.id">
-      <!-- fix the line above ^^^ so that only current user can edit page -->
       <button>
         <router-link v-bind:to="`/users/${user.id}/edit`">Edit Profile</router-link>
       </button>
