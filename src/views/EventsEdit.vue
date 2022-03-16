@@ -43,7 +43,7 @@ export default {
       <p><img v-bind:src="event.flier_image_url" alt="" /></p>
       <div>
         <label>Show Time</label>
-        <input type="text" v-model="event.show_time" />
+        <input type="datetime-local" v-model="event.show_time" />
       </div>
       <div>
         <label>Flier Image Url</label>
