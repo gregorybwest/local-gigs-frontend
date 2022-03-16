@@ -21,6 +21,7 @@ export default {
         .then((response) => {
           console.log("New Event:", response.data);
           localStorage.setItem("flashMessage", "Event successfully created!");
+          this.$router.push(`/events/${response.data.id}`);
         })
         .catch((error) => {
           this.sadStatus = error.response.status;
@@ -83,7 +84,7 @@ export default {
       </div> -->
       <div>
         Show time: (required)
-        <input v-model="newEventParams.show_time" type="text" />
+        <input v-model="newEventParams.show_time" type="datetime-local" />
       </div>
       <div>
         Flier image link:
