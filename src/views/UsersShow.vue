@@ -37,7 +37,7 @@ export default {
     <h2>Upcoming Local Gigs:</h2>
     <div v-for="event in user.events" v-bind:key="event.id">
       <router-link v-bind:to="`/events/${event.id}`">
-        <h3>{{ event.show_time }} @ {{ event.yelp_venue.name }}</h3>
+        <h3>{{ event.readable_date }} @ {{ event.yelp_venue.name }}</h3>
       </router-link>
     </div>
     <div>
