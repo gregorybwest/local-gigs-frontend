@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import Moment from "moment";
 
 export default {
   data: function () {
@@ -11,6 +12,7 @@ export default {
     axios.get(`/events/${this.$route.params.id}`).then((response) => {
       console.log("test", response.data);
       this.event = response.data;
+      this.event.show_time = Moment(this.event.show_time).format("MMMM DD, LT");
     });
   },
   methods: {
