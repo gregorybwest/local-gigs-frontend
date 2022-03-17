@@ -5,14 +5,22 @@ export default {
   data: function () {
     return {
       user: {},
+      sadStatus: "",
       current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
-    axios.get(`/users/${this.$route.params.id}`).then((response) => {
-      console.log("Users Show:", response.data);
-      this.user = response.data;
-    });
+    axios
+      .get(`/users/${this.$route.params.id}`)
+      .then((response) => {
+        console.log("Users Show:", response.data);
+        this.user = response.data;
+      })
+      .catch((error) => {
+        this.sadStatus = error.response.status;
+        this.errors = error.response.data.errors;
+        console.log(this.sadStatus);
+      });
   },
   methods: {
     destroyUser: function () {
@@ -32,6 +40,11 @@ export default {
 
 <template>
   <div class="users-show">
+    <img
+      v-if="sadStatus === 404"
+      v-bind:src="`https://images.squarespace-cdn.com/content/v1/51ee39dfe4b06fd80f3c7853/1401775637096-CQJRAGQQ32HR741L1BIV/image-asset.jpeg?format=1500w`"
+      alt=""
+    />
     <h1>{{ user.user_name }}</h1>
     <img v-bind:src="user.image_url" alt="" />
     <h2>Upcoming Local Gigs:</h2>
