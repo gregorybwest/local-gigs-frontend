@@ -2,7 +2,6 @@
 /* global mapboxgl */
 
 import axios from "axios";
-import Moment from "moment";
 
 export default {
   data: function () {
@@ -23,8 +22,7 @@ export default {
       });
       this.events.forEach((event) => {
         console.log(event);
-        event.show_time = Moment(event.show_time).format("MMMM DD,  LT");
-        let pop_data = `${event.user.user_name} @${event.yelp_venue.name}, ${event.show_time}`;
+        let pop_data = `${event.user.user_name} @${event.yelp_venue.name}, ${event.readable_date}`;
         const popup = new mapboxgl.Popup({ offset: 25 }).setText(pop_data);
         console.log(popup);
         const marker1 = new mapboxgl.Marker()
@@ -48,7 +46,7 @@ export default {
     <h1>All Events</h1>
     <div v-for="event in events" v-bind:key="event.id">
       <h2>
-        {{ event.show_time }} {{ event.user.user_name }} @ {{ event.yelp_venue.name }}
+        {{ event.readable_date }} {{ event.user.user_name }} @ {{ event.yelp_venue.name }}
         <router-link v-bind:to="`/events/${event.id}`">
           <button>View Event</button>
         </router-link>
