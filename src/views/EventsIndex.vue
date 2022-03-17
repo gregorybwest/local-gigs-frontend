@@ -22,9 +22,8 @@ export default {
       });
       this.events.forEach((event) => {
         console.log(event);
-        let pop_data = `${event.user.user_name} @${event.yelp_venue.name}, ${event.readable_date}`;
-        const popup = new mapboxgl.Popup({ offset: 25 }).setText(pop_data);
-        console.log(popup);
+        let popup_data = `${event.user.user_name} @${event.yelp_venue.name}, ${event.readable_date}`;
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(popup_data);
         const marker1 = new mapboxgl.Marker()
           .setLngLat([event.yelp_venue.coordinates.longitude, event.yelp_venue.coordinates.latitude])
           .setPopup(popup)
