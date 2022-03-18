@@ -56,8 +56,10 @@ export default {
     <div>
       <h2>Bio:</h2>
       <p>{{ user.bio }}</p>
-      <h2>Listen!</h2>
-      <a v-bind:href="user.spotify_link">Listen to us on Spotify!</a>
+      <div v-if="user.spotify_link !== null">
+        <h2>Listen!</h2>
+        <a v-bind:href="user.spotify_link">Listen to us on Spotify!</a>
+      </div>
     </div>
     <br />
     <div v-if="current_user_id == user.id">
