@@ -47,11 +47,13 @@ export default {
     />
     <h1>{{ user.user_name }}</h1>
     <img v-bind:src="user.image_url" alt="" />
-    <h2>Upcoming Local Gigs:</h2>
-    <div v-for="event in user.events" v-bind:key="event.id">
-      <router-link v-bind:to="`/events/${event.id}`">
-        <h3>{{ event.readable_date }} @ {{ event.yelp_venue.name }}</h3>
-      </router-link>
+    <div v-if="user.events.length > 0">
+      <h2>Upcoming Local Gigs:</h2>
+      <div v-for="event in user.events" v-bind:key="event.id">
+        <router-link v-bind:to="`/events/${event.id}`">
+          <h3>{{ event.readable_date }} @ {{ event.yelp_venue.name }}</h3>
+        </router-link>
+      </div>
     </div>
     <div>
       <h2>Bio:</h2>
