@@ -7,7 +7,7 @@ export default {
     localStorage.removeItem("jwt");
     localStorage.removeItem("user_id");
     localStorage.setItem("flashMessage", "Sucessfully logged out!");
-    this.$router.push("/");
+    this.$router.push("/events");
   },
 };
 </script>
