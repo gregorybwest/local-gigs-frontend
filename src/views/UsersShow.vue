@@ -140,7 +140,9 @@ export default {
                                     <h2 style="text-align: center">Upcoming Local Gigs:</h2>
                                     <div v-for="event in user.events" v-bind:key="event.id">
                                       <router-link v-bind:to="`/events/${event.id}`">
-                                        <h3>{{ event.readable_date }} @ {{ event.yelp_venue.name }}</h3>
+                                        <h3 style="text-align: center">
+                                          {{ event.readable_date }} @ {{ event.yelp_venue.name }}
+                                        </h3>
                                       </router-link>
                                     </div>
                                   </div>
@@ -149,7 +151,7 @@ export default {
 
                                 <!-- Block content -->
                                 <div class="main-block-content blog-block-content blog-block-inner-content">
-                                  <div>
+                                  <div style="text-align: center">
                                     <h2>Bio:</h2>
                                     <p>{{ user.bio }}</p>
                                     <div v-if="user.spotify_link !== null">
@@ -158,7 +160,7 @@ export default {
                                     </div>
                                   </div>
                                   <br />
-                                  <div v-if="current_user_id == user.id">
+                                  <div style="text-align: center" v-if="current_user_id == user.id">
                                     <button>
                                       <router-link v-bind:to="`/users/${user.id}/edit`">Edit Profile</router-link>
                                     </button>
