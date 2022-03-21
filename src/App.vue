@@ -33,10 +33,10 @@ export default {
             <!-- container -->
             <div class="container gx-4">
               <!-- Logo -->
-              <a class="navbar-brand" href="index.html" title="Bason">
-                <img src="assets/images/logo.png" alt="Bason" class="normal" />
-                <img src="assets/images/logo-light.png" alt="Bason" class="transparent" />
-              </a>
+              <p class="navbar-brand" href="/events" title="Bason">
+                <img src="assets/images/side-drum-24.png" alt="Bason" class="normal" />
+              </p>
+              <h3 class="navbar-brand">LOCAL GIGS</h3>
               <!-- /End Logo -->
 
               <!-- Toggler button -->
@@ -140,6 +140,62 @@ export default {
     {{ flashMessage }}
     <button v-on:click="flashMessage = ''">Dismiss</button>
   </div>
+
+  <!-- head
+    ======================================================================== -->
+  <head>
+    <!-- Basic Info
+        ==================================================================== -->
+    <title>Bason - Portfolio single sbs standard</title>
+
+    <meta name="author" content="Graphicfort" />
+    <meta name="robots" content="index follow" />
+    <meta name="googlebot" content="index follow" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="keywords"
+      content="bason, HTML5, CSS3, Creative, MultiPurpose, Template, create professional website fast"
+    />
+    <meta name="description" content="HTML5 MultiPurpose Template, create professional website fast" />
+
+    <!-- Mobile Configurations
+        ==================================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fav icon
+        ==================================================================== -->
+    <link rel="icon" href="/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/assets/images/favicon/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/assets/images/favicon/favicon-180x180.png" />
+    <meta name="msapplication-TileImage" content="/assets/images/favicon/favicon-270x270.png" />
+
+    <!-- Google Fonts
+        ==================================================================== -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--  CSS Files
+        ==================================================================== -->
+    <link rel="stylesheet" href="assets/js/vendor/bootstrap/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/js/plugins/fancybox/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/js/plugins/mediaelementplayer/css/mediaelementplayer.min.css" />
+    <link rel="stylesheet" href="/assets/js/plugins/twenty-twenty/css/twentytwenty.min.css" />
+    <link rel="stylesheet" href="/assets/js/plugins/owl-carousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/js/plugins/owl-carousel/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/css/social-networks/social-networks.min.css" />
+    <link rel="stylesheet" href="/assets/css/animate/animate.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+  </head>
+  <!-- /End head -->
 
   <router-view />
   <!-- Footer
