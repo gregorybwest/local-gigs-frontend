@@ -72,7 +72,7 @@ export default {
                         data-page-direction="ltr"
                       >
                         <!-- Slider item -->
-                        <div class="owl-slider-item" style="background-image: url(assets/images/pages/022.jpg)"></div>
+                        <div class="owl-slider-item" style="background-color: black"></div>
                         <!-- /End Slider item -->
 
                         <!-- Slider item -->
@@ -105,9 +105,7 @@ export default {
                             <div class="form-block-container">
                               <!-- Logo -->
                               <h1 class="form-block-sign-logo light-color">
-                                <a href="index.html" title="Bason">
-                                  <h2>LOCAL GIGS</h2>
-                                </a>
+                                <h2>LOCAL GIGS</h2>
                               </h1>
                               <!-- /End Logo -->
 
