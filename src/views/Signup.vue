@@ -67,7 +67,7 @@ export default {
                         data-page-direction="ltr"
                       >
                         <!-- Slider item -->
-                        <div class="owl-slider-item" style="background-image: url(assets/images/pages/022.jpg)"></div>
+                        <div class="owl-slider-item" style="background-color: black"></div>
                         <!-- /End Slider item -->
 
                         <!-- Slider item -->
