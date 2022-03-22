@@ -71,11 +71,11 @@ export default {
                         <!-- /End Slider item -->
 
                         <!-- Slider item -->
-                        <div class="owl-slider-item" style="background-image: url(assets/images/pages/023.jpg)"></div>
+                        <div class="owl-slider-item" style="background-color: black"></div>
                         <!-- /End Slider item -->
 
                         <!-- Slider item -->
-                        <div class="owl-slider-item" style="background-image: url(assets/images/pages/024.jpg)"></div>
+                        <div class="owl-slider-item" style="background-color: black"></div>
                         <!-- /End Slider item -->
                       </div>
                       <!-- /End Owl slider -->
@@ -100,9 +100,8 @@ export default {
                             <div class="form-block-container">
                               <!-- Logo -->
                               <h1 class="form-block-sign-logo light-color">
-                                <a href="index.html" title="Bason">
-                                  <h1>Welcome to Local Gigs!</h1>
-                                </a>
+                                <h1 style="margin-bottom: 0">Welcome to</h1>
+                                <h1 style="margin-top: 0">Local Gigs!</h1>
                               </h1>
                               <!-- /End Logo -->
 
