@@ -87,7 +87,7 @@ export default {
                         </a>
                       </li>
 
-                      <li class="breadcrumb-item active"><span>New Events</span></li>
+                      <li class="breadcrumb-item active"><span>Edit Event</span></li>
                     </ol>
                   </nav>
                   <!-- /End Breadcrumb -->
