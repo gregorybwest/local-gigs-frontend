@@ -74,7 +74,7 @@ export default {
                 <div class="row align-items-center justify-content-between">
                   <!-- Title -->
                   <div class="breadcrumb-title">
-                    <h1 class="breadcrumb-heading h5 font-weight-500">Create new event</h1>
+                    <h1 class="breadcrumb-heading h5 font-weight-500">Edit event</h1>
                   </div>
                   <!-- /End Title -->
 
