@@ -103,7 +103,7 @@ export default {
 
           <!-- Page body
                 ============================================================ -->
-          <div id="page-body" class="page-body">
+          <div id="page-body" class="page-body bg-light">
             <!-- container -->
             <div class="container gx-4">
               <!-- row -->
@@ -134,17 +134,21 @@ export default {
                                   <br />
                                   <h1 style="text-align: center">All Events</h1>
                                   <br />
-                                  <div style="text-align: center" v-for="event in events" v-bind:key="event.id">
+                                  <div
+                                    class="container p-4 border-bottom"
+                                    style="text-align: center"
+                                    v-for="event in events"
+                                    v-bind:key="event.id"
+                                  >
                                     <h2>
                                       {{ event.readable_date }} {{ event.user.user_name }} @ {{ event.yelp_venue.name }}
-                                      <br />
-                                      <br />
-                                      <router-link v-bind:to="`/events/${event.id}`">
-                                        <button>View Event</button>
-                                      </router-link>
                                     </h2>
-                                    <p>{{ event.yelp_venue.location[0] }}</p>
-                                    <p>{{ event.yelp_venue.location[1] }}</p>
+                                    <h3>{{ event.yelp_venue.location[0] }}, {{ event.yelp_venue.location[1] }}</h3>
+                                    <router-link v-bind:to="`/events/${event.id}`">
+                                      <button class="btn btn-accent btn-lg btn-1px-border data-scroll-to">
+                                        View Event
+                                      </button>
+                                    </router-link>
                                   </div>
                                 </div>
                                 <!-- /End Block heading -->
