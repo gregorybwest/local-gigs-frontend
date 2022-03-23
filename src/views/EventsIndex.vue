@@ -37,121 +37,150 @@ export default {
 
 <template>
   <div class="events-index">
-    <!-- body
-    ======================================================================== -->
-    <body>
-      <!-- Main wrapper
-        ==================================================================== -->
-      <div id="main-wrapper">
-        <!-- Main container -->
-        <div id="main-container">
-          <!-- Back to top button
+    <!-- Breadcrumb section
                 ============================================================ -->
-          <a href="#" id="back-to-top" class="back-to-top" title="Back to top"></a>
-
-          <!-- Header
-                ============================================================ -->
-          <header class="header-section header-section-fixed">
-            <!-- Header section container -->
-            <div class="header-section-container">
-              <!-- Header menu section -->
-              <div class="header-menu-section">
-                <!-- Header menu section container -->
-                <div class="header-menu-section-container"></div>
-                <!-- /End Header menu section container -->
-              </div>
-              <!-- /End Header menu section -->
+    <div class="breadcrumb-section breadcrumb-section-layout-1 text-center">
+      <!-- Breadcrumb container -->
+      <div class="breadcrumb-section-container">
+        <!-- container -->
+        <div class="container gx-4">
+          <!-- row -->
+          <div class="row align-items-center justify-content-between">
+            <!-- Title -->
+            <div class="breadcrumb-title">
+              <h1 class="breadcrumb-heading h5 font-weight-500">ALL EVENTS</h1>
             </div>
-            <!-- /End Header section container -->
-          </header>
-          <!-- /End Header section -->
+            <!-- /End Title -->
 
-          <!-- Breadcrumb section
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <span>Los Angeles</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <!-- /End Breadcrumb -->
+          </div>
+          <!-- /End row -->
+        </div>
+        <!-- /End container -->
+      </div>
+      <!-- /End Breadcrumb container -->
+    </div>
+    <!-- /End Breadcrumb section -->
+    <!-- Page body
                 ============================================================ -->
-          <div class="breadcrumb-section breadcrumb-section-layout-1 text-center">
-            <!-- Breadcrumb container -->
-            <div class="breadcrumb-section-container">
+    <div id="page-body" class="page-body">
+      <!-- row -->
+      <div class="row main-row justify-content-center">
+        <!-- Content area
+                        ==================================================== -->
+        <div id="primary" class="content-area col-lg-12">
+          <!-- Main -->
+          <main id="main" class="content-area-container site-main">
+            <!-- Portfolio wrapper -->
+            <div class="portfolio-block-wrapper">
+              <!-- row -->
+              <div class="row gx-36">
+                <!-- Grid item -->
+                <div class="portfolio-block-post col-lg-12">
+                  <!-- Post -->
+                  <article class="main-block portfolio-block portfolio-block-inner format-standard">
+                    <!-- Block container -->
+                    <div class="main-block-container portfolio-block-container portfolio-block-inner-container">
+                      <!-- Block body -->
+                      <div class="main-block-body portfolio-block-body portfolio-block-inner-body">
+                        <!-- Block heading -->
+                        <div class="main-block-heading portfolio-block-heading portfolio-block-inner-heading">
+                          <div class="map">
+                            <div id="map"></div>
+                          </div>
+                        </div>
+                        <!-- /End Block heading -->
+                      </div>
+                      <!--/End Block body -->
+                    </div>
+                    <!-- /End Block container -->
+                  </article>
+                  <!-- /End Post -->
+                </div>
+                <!-- /End Grid item -->
+              </div>
+              <!-- /End row -->
+            </div>
+            <!-- /End Portfolio wrapper -->
+            <!-- Section -->
+            <div class="main-section pt-72 pb-72">
               <!-- container -->
               <div class="container gx-4">
                 <!-- row -->
-                <div class="row align-items-center justify-content-between">
-                  <!-- Title -->
-                  <div class="breadcrumb-title">
-                    <h1 class="breadcrumb-heading h5 font-weight-500">ALL EVENTS</h1>
-                  </div>
-                  <!-- /End Title -->
-
-                  <!-- Breadcrumb -->
-                  <nav class="breadcrumb-nav">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="index.html">
-                          <span>Los Angeles</span>
-                        </a>
-                      </li>
-                    </ol>
-                  </nav>
-                  <!-- /End Breadcrumb -->
-                </div>
-                <!-- /End row -->
-              </div>
-              <!-- /End container -->
-            </div>
-            <!-- /End Breadcrumb container -->
-          </div>
-          <!-- /End Breadcrumb section -->
-
-          <!-- Page body
-                ============================================================ -->
-          <div id="page-body" class="page-body bg-light">
-            <!-- container -->
-            <div class="container gx-4">
-              <!-- row -->
-              <div class="row main-row justify-content-center">
-                <!-- Content area
-                            ================================================ -->
-                <div id="primary" class="content-area col-lg-12">
-                  <!-- Main -->
-                  <main id="main" class="content-area-container site-main pt-72 pb-72">
-                    <!-- Portfolio wrapper -->
-                    <div class="portfolio-block-wrapper">
-                      <!-- row -->
-                      <div class="row gx-36">
+                <div class="row gx-36">
+                  <!-- col-lg-12 -->
+                  <div class="col-lg-12">
+                    <!-- Blog wrapper -->
+                    <div class="blog-block-wrapper blog-block-small-image blog-block-front blog-block-cols-1">
+                      <!-- Loop -->
+                      <div class="row gx-36 gy-0 row-cols-1 grid-wrapper">
                         <!-- Grid item -->
-                        <div class="portfolio-block-post col-lg-12">
+                        <div class="grid-item" v-for="event in events" v-bind:key="event.id">
                           <!-- Post -->
-                          <article class="main-block portfolio-block portfolio-block-inner format-standard">
+                          <article class="main-block blog-block format-standard">
                             <!-- Block container -->
-                            <div class="main-block-container portfolio-block-container portfolio-block-inner-container">
+                            <div class="main-block-container blog-block-container">
+                              <!-- Block header -->
+                              <div class="main-block-header blog-block-header">
+                                <a href="#">
+                                  <img :src="event.flier_image_url" alt="Article image" />
+                                </a>
+                              </div>
+                              <!-- /End Block header -->
+
                               <!-- Block body -->
-                              <div class="main-block-body portfolio-block-body portfolio-block-inner-body">
+                              <div class="main-block-body blog-block-body">
                                 <!-- Block heading -->
-                                <div class="main-block-heading portfolio-block-heading portfolio-block-inner-heading">
-                                  <div class="map">
-                                    <h2>Local Gigs Map</h2>
-                                    <div id="map"></div>
-                                  </div>
-                                  <br />
-                                  <h1 style="text-align: center">All Events</h1>
-                                  <br />
-                                  <div
-                                    class="container p-4 border-bottom"
-                                    style="text-align: center"
-                                    v-for="event in events"
-                                    v-bind:key="event.id"
-                                  >
-                                    <h2>
-                                      {{ event.readable_date }} {{ event.user.user_name }} @ {{ event.yelp_venue.name }}
-                                    </h2>
-                                    <h3>{{ event.yelp_venue.location[0] }}, {{ event.yelp_venue.location[1] }}</h3>
+                                <div class="main-block-heading blog-block-heading">
+                                  <h2 class="h5 title">
                                     <router-link v-bind:to="`/events/${event.id}`">
-                                      <button class="btn btn-accent btn-lg btn-1px-border data-scroll-to">
-                                        View Event
-                                      </button>
+                                      {{ event.user.user_name }} @ {{ event.yelp_venue.name }}
                                     </router-link>
-                                  </div>
+                                  </h2>
+
+                                  <ul class="meta-block">
+                                    <li class="meta-block-date">
+                                      <span>
+                                        <a href="#">{{ event.readable_date }}</a>
+                                      </span>
+                                    </li>
+
+                                    <li class="meta-block-comments">
+                                      <span>
+                                        <a href="#">{{ event.user.location }}</a>
+                                      </span>
+                                    </li>
+                                  </ul>
                                 </div>
                                 <!-- /End Block heading -->
+
+                                <!-- Block content -->
+                                <div class="main-block-content blog-block-content">
+                                  <p>{{ event.yelp_venue.location[0] }}, {{ event.yelp_venue.location[1] }}</p>
+                                </div>
+                                <!-- /End Block content -->
+
+                                <!-- Block footer -->
+                                <div class="main-block-footer blog-block-footer">
+                                  <router-link v-bind:to="`/events/${event.id}`" class="btn btn-accent btn-sm">
+                                    <span>VIEW EVENT</span>
+                                  </router-link>
+                                  <router-link v-bind:to="`/events/${event.id}`" class="read-more-link font-size-12">
+                                    <i class="fas fa-plus"></i>
+                                    VIEW EVENT
+                                  </router-link>
+                                </div>
+                                <!-- /End Block footer -->
                               </div>
                               <!--/End Block body -->
                             </div>
@@ -161,25 +190,26 @@ export default {
                         </div>
                         <!-- /End Grid item -->
                       </div>
-                      <!-- /End row -->
+                      <!-- /End Loop -->
                     </div>
-                    <!-- /End Portfolio wrapper -->
-                  </main>
-                  <!-- /End Main -->
+                    <!-- /End Blog wrapper -->
+                  </div>
+                  <!-- /End col-lg-12 -->
                 </div>
-                <!-- /End Content area -->
+                <!-- /End row -->
               </div>
-              <!-- /End row -->
+              <!-- /End container -->
             </div>
-            <!-- /End container -->
-          </div>
-          <!-- /End Page body -->
+            <!-- /End Section -->
+          </main>
+          <!-- /End Main -->
         </div>
-        <!-- /End Main container -->
+        <!-- /End Content area -->
       </div>
-      <!-- /End Main wrapper -->
-    </body>
-    <!-- /End body -->
+      <!-- /End row -->
+    </div>
+    <!-- /End Page body -->
+
     <!-- <div class="map">
       <h2>Local Gigs Map</h2>
       <div id="map"></div>
