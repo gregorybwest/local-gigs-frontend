@@ -52,186 +52,225 @@ export default {
 
 <template>
   <div class="events-new">
-    <!-- body
-    ======================================================================== -->
-    <body>
-      <!-- Main wrapper
-        ==================================================================== -->
-      <div id="main-wrapper">
-        <!-- Main container -->
-        <div id="main-container">
-          <!-- Back to top button
+    <!-- Breadcrumb section
                 ============================================================ -->
-          <a href="#" id="back-to-top" class="back-to-top" title="Back to top"></a>
-
-          <!-- Header
-                ============================================================ -->
-          <header class="header-section header-section-fixed">
-            <!-- Header section container -->
-            <div class="header-section-container">
-              <!-- Header menu section -->
-              <div class="header-menu-section">
-                <!-- Header menu section container -->
-                <div class="header-menu-section-container"></div>
-                <!-- /End Header menu section container -->
-              </div>
-              <!-- /End Header menu section -->
+    <div class="breadcrumb-section breadcrumb-section-layout-1 text-center">
+      <!-- Breadcrumb container -->
+      <div class="breadcrumb-section-container">
+        <!-- container -->
+        <div class="container gx-4">
+          <!-- row -->
+          <div class="row align-items-center justify-content-between">
+            <!-- Title -->
+            <div class="breadcrumb-title">
+              <h1 class="breadcrumb-heading h5 font-weight-500">Create new event</h1>
             </div>
-            <!-- /End Header section container -->
-          </header>
-          <!-- /End Header section -->
+            <!-- /End Title -->
 
-          <!-- Breadcrumb section
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">
+                    <span>Local Gigs</span>
+                  </a>
+                </li>
+
+                <li class="breadcrumb-item active"><span>New Events</span></li>
+              </ol>
+            </nav>
+            <!-- /End Breadcrumb -->
+          </div>
+          <!-- /End row -->
+        </div>
+        <!-- /End container -->
+      </div>
+      <!-- /End Breadcrumb container -->
+    </div>
+    <!-- /End Breadcrumb section -->
+
+    <!-- Page body
                 ============================================================ -->
-          <div class="breadcrumb-section breadcrumb-section-layout-1 text-center">
-            <!-- Breadcrumb container -->
-            <div class="breadcrumb-section-container">
+    <div id="page-body" class="page-body">
+      <!-- row -->
+      <div class="row main-row justify-content-center">
+        <!-- Content area
+                        ==================================================== -->
+        <div id="primary" class="content-area col-lg-12">
+          <!-- Main -->
+          <main id="main" class="content-area-container site-main">
+            <!-- Section -->
+            <div class="main-section section-fullwidth pt-0 pb-0">
               <!-- container -->
-              <div class="container gx-4">
+              <div class="container-fluid gx-0">
                 <!-- row -->
-                <div class="row align-items-center justify-content-between">
-                  <!-- Title -->
-                  <div class="breadcrumb-title">
-                    <h1 class="breadcrumb-heading h5 font-weight-500">Create new event</h1>
+                <div class="row gx-36">
+                  <!-- col-lg-12 -->
+                  <div class="col-lg-12">
+                    <div
+                      class="hr-divider hr-divider-layout-3 hr-divider-1px-border hr-divider-fullwidth grey-2-color"
+                    ></div>
                   </div>
-                  <!-- /End Title -->
-
-                  <!-- Breadcrumb -->
-                  <nav class="breadcrumb-nav">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="index.html">
-                          <span>Local Gigs</span>
-                        </a>
-                      </li>
-
-                      <li class="breadcrumb-item active"><span>New Events</span></li>
-                    </ol>
-                  </nav>
-                  <!-- /End Breadcrumb -->
+                  <!-- /End col-lg-12 -->
                 </div>
                 <!-- /End row -->
               </div>
               <!-- /End container -->
             </div>
-            <!-- /End Breadcrumb container -->
-          </div>
-          <!-- /End Breadcrumb section -->
+            <!-- /End Section -->
 
-          <!-- Page body
-                ============================================================ -->
-          <div id="page-body" class="page-body">
-            <!-- container -->
-            <div class="container gx-4">
-              <!-- row -->
-              <div class="row main-row justify-content-center">
-                <!-- Content area
-                            ================================================ -->
-                <div id="primary" class="content-area col-lg-12">
-                  <!-- Main -->
-                  <main id="main" class="content-area-container site-main pt-72 pb-72">
-                    <!-- Portfolio wrapper -->
-                    <div class="portfolio-block-wrapper">
-                      <!-- row -->
-                      <div class="row gx-36">
-                        <!-- Grid item -->
-                        <div class="portfolio-block-post col-lg-12">
-                          <!-- Post -->
-                          <article class="main-block portfolio-block portfolio-block-inner format-standard">
-                            <!-- Block container -->
-                            <div class="main-block-container portfolio-block-container portfolio-block-inner-container">
-                              <!-- Block body -->
-                              <div class="main-block-body portfolio-block-body portfolio-block-inner-body">
-                                <!-- Block content -->
-                                <div class="main-block-content portfolio-block-content portfolio-block-inner-content">
-                                  <!-- row -->
-                                  <div class="row gx-36 flex-row-reverse">
-                                    <!-- info -->
-                                    <div class="col-lg-6 info"></div>
-                                    <!-- /End info -->
+            <!-- Section -->
+            <div class="main-section">
+              <!-- container -->
+              <div class="container gx-4">
+                <!-- row -->
+                <div class="row gx-36">
+                  <!-- col-lg-8 -->
+                  <div class="col-lg-8 offset-lg-2">
+                    <!-- Section title -->
+                    <div class="section-title text-center">
+                      <!-- Section title container -->
+                      <div class="section-title-container">
+                        <!-- Section title body -->
+                        <div class="section-title-body">
+                          <!-- Section title heading -->
+                          <div class="section-title-heading">
+                            <h6 class="font-weight-500 accent-color">LOCAL GIGS</h6>
+                            <h2>Create an event!</h2>
+                          </div>
+                          <!-- /End Section title heading -->
 
-                                    <!-- description -->
-                                    <div class="col-lg-6 description">
-                                      <h1>Create New Event</h1>
-                                      <form v-on:submit.prevent="searchVenue()">
-                                        <h2>Search for your venue</h2>
-                                        <div style="text-align: left">
-                                          Venue Search:
-                                          <input v-model="this.userVenue" type="text" />
-                                          <button type="submit">Search</button>
-                                        </div>
-                                        <div class="container"><br /></div>
-                                        <div v-for="venue in venues" v-bind:key="venue.id">
-                                          {{ venue.name }}, {{ venue.location.display_address[0] }}
-                                          <button v-on:click="chooseVenue(venue)">Choose Venue</button>
-                                        </div>
-                                        <div class="container"></div>
-                                        <div>
-                                          <br />
-                                          <div v-if="displaySelectedVenue">
-                                            You selected: {{ displaySelectedVenue }}
-                                          </div>
-                                          <br />
-                                          <div v-if="noResultsMessage">
-                                            {{ noResultsMessage }}
-                                            <button v-on:click="noResultsMessage = ''">Okay</button>
-                                          </div>
-                                        </div>
-                                      </form>
+                          <!-- Divider -->
+                          <div class="hr-divider hr-divider-layout-1 accent-color"></div>
 
-                                      <br />
-                                      <br />
-                                      <form v-on:submit.prevent="createEvent()">
-                                        <!-- <div>
-                                          Yelp Venue Id:
-                                          <input v-model="newEventParams.yelp_venue_id" type="text" />
-                                        </div> -->
-                                        <div>
-                                          Show time: (required)
-                                          <input v-model="newEventParams.show_time" type="datetime-local" />
-                                        </div>
-                                        <div class="container"><br /></div>
-                                        <div>
-                                          Flier image link:
-                                          <input v-model="newEventParams.flier_image_url" type="text" />
-                                        </div>
-                                        <button type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                    <div class="col-lg-4"></div>
-                                    <!-- /End description -->
-                                  </div>
-                                  <!-- /End row -->
-                                </div>
-                                <!-- /End Block content -->
-                              </div>
-                              <!--/End Block body -->
-                            </div>
-                            <!-- /End Block container -->
-                          </article>
-                          <!-- /End Post -->
+                          <!-- Block content -->
+                          <div class="section-title-content">
+                            <p>Search for any music venue or bar in your city</p>
+                          </div>
+                          <!-- /End Block content -->
                         </div>
-                        <!-- /End Grid item -->
+                        <!--/End Section title body -->
                       </div>
-                      <!-- /End row -->
+                      <!-- /End Section title container -->
                     </div>
-                    <!-- /End Portfolio wrapper -->
-                  </main>
-                  <!-- /End Main -->
+                    <!-- /End Section title -->
+
+                    <!-- GAP -->
+                    <div class="gap gap-36"></div>
+                  </div>
+                  <!-- /End col-lg-8 -->
+
+                  <!-- col-lg-8 -->
+                  <div class="col-lg-8 offset-lg-2">
+                    <!-- Contact form -->
+                    <div class="form-block form-block-validation form-block-contact">
+                      <!-- Form container -->
+                      <div class="form-block-container">
+                        <!-- Form -->
+                        <form v-on:submit.prevent="searchVenue()" class="row">
+                          <!-- VENUE SEARCH -->
+                          <div style="padding-bottom: 60px" class="col-md-10">
+                            <label class="label">
+                              Venue Search
+                              <span class="red-color">*</span>
+                              <input v-model="this.userVenue" type="text" class="form-control" name="form_name" />
+                              <button type="submit">Search</button>
+                            </label>
+                            <div v-for="venue in venues" v-bind:key="venue.id">
+                              {{ venue.name }}, {{ venue.location.display_address[0] }}
+                              <button v-on:click="chooseVenue(venue)">Choose Venue</button>
+                            </div>
+                            <div class="container"></div>
+                            <div>
+                              <div style="padding-top: 20px" v-if="displaySelectedVenue">
+                                You selected: {{ displaySelectedVenue }}
+                              </div>
+
+                              <div v-if="noResultsMessage">
+                                {{ noResultsMessage }}
+                                <button style="padding-bottom: 100px" v-on:click="noResultsMessage = ''">Okay</button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /End VENUES -->
+                        </form>
+                        <!-- /End Form -->
+                        <form v-on:submit.prevent="createEvent()">
+                          <!-- Show Time -->
+                          <div class="col-md-6">
+                            <label class="label">
+                              Show Time
+                              <span class="red-color">*</span>
+                              <input
+                                v-model="newEventParams.show_time"
+                                class="form-control"
+                                type="datetime-local"
+                                name="form_email"
+                              />
+                            </label>
+                          </div>
+                          <!-- /End Show Time -->
+
+                          <!-- Subject -->
+                          <div class="col-lg-12">
+                            <label class="label">
+                              Flier Image Link
+                              <span class="red-color">*</span>
+                              <input
+                                v-model="newEventParams.flier_image_url"
+                                class="form-control"
+                                type="text"
+                                name="form_subject"
+                              />
+                            </label>
+                          </div>
+                          <!-- /End Subject -->
+
+                          <!-- Submit button -->
+                          <div class="col-lg-12">
+                            <button type="submit" class="btn btn-accent btn-block">
+                              <span>SUBMIT</span>
+                              <!-- /End Submit button -->
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /End Form container -->
+                    </div>
+                    <!-- /End Contact form -->
+                  </div>
+                  <!-- /End col-lg-8 -->
                 </div>
-                <!-- /End Content area -->
+                <!-- /End row -->
               </div>
-              <!-- /End row -->
+              <!-- /End container -->
             </div>
-            <!-- /End container -->
-          </div>
-          <!-- /End Page body -->
+            <!-- /End Section -->
+
+            <!-- Section -->
+            <div class="main-section pt-0 pb-0">
+              <!-- container -->
+              <div class="container-fluid gx-0">
+                <!-- row -->
+                <div class="row gx-36">
+                  <!-- col-lg-12 -->
+                  <div class="col-lg-12"></div>
+                  <!-- /End col-lg-12 -->
+                </div>
+                <!-- /End row -->
+              </div>
+              <!-- /End container -->
+            </div>
+            <!-- /End Section -->
+          </main>
+          <!-- /End Main -->
         </div>
-        <!-- /End Main container -->
+        <!-- /End Content area -->
       </div>
-      <!-- /End Main wrapper -->
-    </body>
-    <!-- /End body -->
+      <!-- /End row -->
+    </div>
+    <!-- /End Page body -->
+
     <!-- <h1>Create New Event</h1>
     <form v-on:submit.prevent="searchVenue()">
       <h2>Search for your venue</h2>
