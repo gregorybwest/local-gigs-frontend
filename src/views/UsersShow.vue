@@ -153,10 +153,13 @@ export default {
                                 <div class="main-block-content blog-block-content blog-block-inner-content">
                                   <div style="text-align: center">
                                     <h2>Bio:</h2>
-                                    <p>{{ user.bio }}</p>
+                                    <p class="border-bottom">{{ user.bio }}</p>
                                     <div v-if="user.spotify_link !== null">
                                       <h2>Listen!</h2>
-                                      <a v-bind:href="user.spotify_link">Listen to us on Spotify!</a>
+                                      <h3>
+                                        <a v-bind:href="user.spotify_link">Check us out on Spotify!</a>
+                                      </h3>
+                                      <br />
                                     </div>
                                   </div>
                                   <br />
