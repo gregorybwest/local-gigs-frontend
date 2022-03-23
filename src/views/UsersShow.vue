@@ -138,7 +138,7 @@ export default {
                                 <div class="main-block-heading blog-block-heading blog-block-inner-heading">
                                   <div v-if="user.events.length > 0">
                                     <h2 style="text-align: center">Upcoming Local Gigs:</h2>
-                                    <div v-for="event in user.events" v-bind:key="event.id">
+                                    <div class="border-bottom" v-for="event in user.events" v-bind:key="event.id">
                                       <router-link v-bind:to="`/events/${event.id}`">
                                         <h3 style="text-align: center">
                                           {{ event.readable_date }} @ {{ event.yelp_venue.name }}
