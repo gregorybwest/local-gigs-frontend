@@ -105,6 +105,7 @@ export default {
                 </ul>
                 <!-- /End Header buttons -->
               </div>
+
               <!-- /End Header menu (Desktop) -->
             </div>
             <!-- /End container -->
