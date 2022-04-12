@@ -155,7 +155,7 @@ export default {
                                     <ins>
                                       <span>
                                         <p v-if="user.spotify_link !== null">
-                                          <a v-bind:href="user.spotify_link">Check us out on Spotify!</a>
+                                          <a v-bind:href="user.spotify_link">Listen on Spotify!</a>
                                         </p>
                                       </span>
                                     </ins>
