@@ -34,7 +34,7 @@ export default {
             <div class="container gx-4">
               <!-- Logo -->
               <p class="navbar-brand" href="/events" title="Bason">
-                <img src="assets/images/side-drum-24.png" alt="Bason" class="normal" />
+                <img src="assets/images/side-drum-24.png" alt="" class="normal" />
               </p>
               <h3 class="navbar-brand">LOCAL GIGS</h3>
               <!-- /End Logo -->
